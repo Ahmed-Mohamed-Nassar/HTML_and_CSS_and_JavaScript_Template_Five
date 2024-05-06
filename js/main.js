@@ -66,77 +66,90 @@ function finalcitis() {
     }
   }
 }
-window.addEventListener("load",function () {
+window.addEventListener("load", function () {
   finalcitis();
-})
-countryFromHtml.addEventListener("change",function () {
+});
+countryFromHtml.addEventListener("change", function () {
   finalcitis();
-})
-window.addEventListener("load",function () {
-  putTimes()
-})
-countryFromHtml.addEventListener("change",function () {
-  putTimes()
-  })
-cityFromHtml.addEventListener("change",function () {
-  putTimes()
-  })
-  function getCityNameEn(cityArabicName) {
-    let cityNaEn=""
-    for (const city of citis) {
-      if (city.name===cityArabicName) {
-        cityNaEn=city.cityNameEn
-      }
+});
+window.addEventListener("load", function () {
+  putTimes();
+});
+countryFromHtml.addEventListener("change", function () {
+  putTimes();
+});
+cityFromHtml.addEventListener("change", function () {
+  putTimes();
+});
+function getCityNameEn(cityArabicName) {
+  let cityNaEn = "";
+  for (const city of citis) {
+    if (city.name === cityArabicName) {
+      cityNaEn = city.cityNameEn;
     }
-    return cityNaEn
   }
-  function getCountryIso(countryArabicName){
-    let countryIso=""
-    for (const coun of countries) {
-      if (coun.name===countryArabicName) {
-        countryIso=coun.countryISO
-      }
+  return cityNaEn;
+}
+function getCountryIso(countryArabicName) {
+  let countryIso = "";
+  for (const coun of countries) {
+    if (coun.name === countryArabicName) {
+      countryIso = coun.countryISO;
     }
-    return countryIso
   }
-function fi(count,ciit) {
-  axios.get('http://api.aladhan.com/v1/timingsByCity',{
-  params:{
-      country:`${count}`,
-      city:`${ciit}`
-  }
-}).then(function (response) {
-  let mawa=response.data.data.timings
-    fajr.innerHTML = mawa.Fajr;
-    sunrise.innerHTML = mawa.Sunrise;
-    zohr.innerHTML = mawa.Dhuhr;
-    asr.innerHTML = mawa.Asr;
-    sunset.innerHTML = mawa.Sunset;
-    ishaa.innerHTML = mawa.Isha;
-    let weekday=response.data.data.date.hijri.weekday.ar
-    let month=response.data.data.date.hijri.month.ar
-    let day=response.data.data.date.hijri.day
-    let year=response.data.data.date.hijri.year
-    let dayName=document.querySelector(".dayName")
-    dayName.innerHTML=weekday
-    let dayNum=document.querySelector(".dayNum")
-    dayNum.innerHTML=day
-    let montht=document.querySelector(".month")
-    montht.innerHTML=month
-    let yearr=document.querySelector(".year")
-    yearr.innerHTML=year
-}).catch(function (error) {
-  console.log(error);
-})
+  return countryIso;
+}
+function fi(count, ciit) {
+  fetch(
+    `http://api.aladhan.com/v1/timingsByCity/:date?city=${ciit}&country=${count}`
+  )
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (response) {
+      console.log(response.data);
+      let mawa = response.data.timings;
+      fajr.innerHTML = mawa.Fajr;
+      sunrise.innerHTML = mawa.Sunrise;
+      zohr.innerHTML = mawa.Dhuhr;
+      asr.innerHTML = mawa.Asr;
+      sunset.innerHTML = mawa.Sunset;
+      ishaa.innerHTML = mawa.Isha;
+      let weekday = response.data.date.hijri.weekday.ar;
+      let month = response.data.date.hijri.month.ar;
+      let day = response.data.date.hijri.day;
+      let year = response.data.date.hijri.year;
+      let dayName = document.querySelector(".dayName");
+      dayName.innerHTML = weekday;
+      let dayNum = document.querySelector(".dayNum");
+      dayNum.innerHTML = day;
+      let montht = document.querySelector(".month");
+      montht.innerHTML = month;
+      let yearr = document.querySelector(".year");
+      yearr.innerHTML = year;
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
 }
 function putTimes() {
-  let ciNaAr=cityFromHtml.value 
-  let coNaAr=countryFromHtml.value
-  getCityNameEn(ciNaAr)
-  getCountryIso(coNaAr)
-  fi(getCountryIso(coNaAr),getCityNameEn(ciNaAr))
-  let dawla=document.querySelector(".dawla")
-  let elmohafza=document.querySelector(".elmohafza")
-  dawla.innerHTML=coNaAr
-  elmohafza.innerHTML=ciNaAr
+  let ciNaAr = cityFromHtml.value;
+  let coNaAr = countryFromHtml.value;
+  getCityNameEn(ciNaAr);
+  getCountryIso(coNaAr);
+  fi(getCountryIso(coNaAr), getCityNameEn(ciNaAr));
+  let dawla = document.querySelector(".dawla");
+  let elmohafza = document.querySelector(".elmohafza");
+  dawla.innerHTML = coNaAr;
+  elmohafza.innerHTML = ciNaAr;
 }
+
+// fetch(
+//   `http://api.aladhan.com/v1/timingsByCity/:date?city=${ciit}&country=${count}`
+// )
+//   .then(function (response) {
+//     return response.json();
+//   })
+//   .then(function (res) {
+//     console.log(res);
+//   });

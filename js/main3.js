@@ -1,12 +1,16 @@
 let mainArea = document.querySelector(".azkarText");
 let esmAzkar = document.querySelector(".esmAzkar");
-axios
-  .get(
-    "https://raw.githubusercontent.com/nawafalqari/azkar-api/56df51279ab6eb86dc2f6202c7de26c8948331c1/azkar.json"
-  )
+
+fetch(
+  `https://raw.githubusercontent.com/nawafalqari/azkar-api/56df51279ab6eb86dc2f6202c7de26c8948331c1/azkar.json`
+)
+  .then(function (response) {
+    return response.json();
+  })
   .then(function (response) {
     //
-    let elazkarToPut = response.data[`أذكار الصباح`];
+    console.log(response);
+    let elazkarToPut = response[`أذكار الصباح`];
     esmAzkar.innerHTML = "أذكار الصباح";
     //
     for (const zekToPut of elazkarToPut) {
@@ -21,7 +25,7 @@ axios
     }
     //
     function getAzkar(ppp) {
-      return response.data[`${ppp}`];
+      return response[`${ppp}`];
     }
 
     let azkarMainName = [
@@ -58,7 +62,7 @@ axios
       }
       function putZekrContent(para) {
         mainArea.innerHTML = "";
-        let elazkarToPut = response.data[`${para}`];
+        let elazkarToPut = response[`${para}`];
         for (const zekToPut of elazkarToPut) {
           if (!Array.isArray(zekToPut) && zekToPut.content != "stop") {
             let div = document.createElement("div");

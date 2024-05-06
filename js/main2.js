@@ -1,12 +1,15 @@
-axios
-  .get(`http://api.alquran.cloud/v1/quran/quran-uthmani`)
+fetch(`http://api.alquran.cloud/v1/quran/quran-uthmani`)
   .then(function (response) {
+    return response.json();
+  })
+  .then(function (response) {
+    console.log(response);
     let mainUlForFehress = document.querySelector(".mainUlForFehres");
-    let allSewar = response.data.data.surahs;
+    let allSewar = response.data.surahs;
     // defult
     let ataytexttdefult = document.querySelector(".ayatText");
     let rakam = 0;
-    let elfat7a = response.data.data.surahs[0].ayahs;
+    let elfat7a = response.data.surahs[0].ayahs;
     console.log(elfat7a);
     for (const aya of elfat7a) {
       rakam++;
@@ -17,7 +20,7 @@ axios
     }
     // defult
     let esmSoraAyatt = document.querySelector(".esmSoraAyat");
-    esmSoraAyatt.innerHTML = response.data.data.surahs[0].name;
+    esmSoraAyatt.innerHTML = response.data.surahs[0].name;
     let couuSora = 0;
     for (const sora of allSewar) {
       couuSora++;
@@ -38,7 +41,7 @@ axios
           e.classList.remove("active");
         });
         theCurr.classList.add("active");
-        let last = response.data.data.surahs;
+        let last = response.data.surahs;
         for (const las of last) {
           if (theCurr.innerHTML == las.name) {
             let ayatt = las.ayahs;
