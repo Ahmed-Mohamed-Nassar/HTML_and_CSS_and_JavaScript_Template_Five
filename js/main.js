@@ -101,7 +101,7 @@ function getCountryIso(countryArabicName) {
 }
 function fi(count, ciit) {
   fetch(
-    `http://api.aladhan.com/v1/timingsByCity/:date?city=${ciit}&country=${count}`
+    `https://api.aladhan.com/v1/timingsByCity/:date?city=${ciit}&country=${count}`
   )
     .then(function (response) {
       return response.json();
@@ -145,7 +145,7 @@ function putTimes() {
 }
 
 // fetch(
-//   `http://api.aladhan.com/v1/timingsByCity/:date?city=${ciit}&country=${count}`
+//   `httpa://api.aladhan.com/v1/timingsByCity/:date?city=${ciit}&country=${count}`
 // )
 //   .then(function (response) {
 //     return response.json();
