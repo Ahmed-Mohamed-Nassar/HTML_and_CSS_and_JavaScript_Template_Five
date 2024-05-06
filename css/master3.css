@@ -1,0 +1,171 @@
+:root {
+  --main-color: #6b291d;
+  --secondary-color: #fef5f0;
+  /* --section-padding: 60px; */
+  --section-background: #fef5f0;
+  --main-duration: 0.5s;
+}
+/* End Variables */
+/* Start Global Rules */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Work Sans", sans-serif;
+  direction: rtl;
+  background-color: var(--section-background);
+}
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/* End Global Rules */
+/*  */
+/* .quranContent {
+  } */
+.azarContent .container {
+  display: flex;
+  justify-content: space-between;
+}
+.azarContent .container .azkarFehres {
+  width: 50%;
+}
+.azarContent .container .azkarFehres h2 {
+  display: inline-block;
+  color: var(--secondary-color);
+  background-color: var(--main-color);
+  padding: 10px 15px;
+  border-radius: 6px 6px;
+  text-align: center;
+  font-size: 22px;
+  -webkit-box-shadow: -5px 5px 10px 0.5px rgba(0, 0, 0, 0.27);
+  -moz-box-shadow: -5px 5px 10px 0.5px rgba(0, 0, 0, 0.27);
+  box-shadow: -5px 5px 10px 0.5px rgba(0, 0, 0, 0.27);
+}
+
+.azarContent .container .azkarFehres .askarMainUlForFehres {
+  display: flex;
+  flex-direction: column;
+}
+.azarContent .container .azkarFehres .askarMainUlForFehres li {
+  margin-bottom: 20px;
+  list-style-type: none;
+  color: var(--main-color);
+}
+.azarContent .container .azkarFehres .askarMainUlForFehres li a {
+  text-decoration: none;
+  color: var(--main-color);
+  transition: var(--main-duration);
+  letter-spacing: 1px;
+}
+.azarContent .container .azkarFehres .askarMainUlForFehres li a:hover {
+  color: var(--secondary-color);
+  background-color: var(--main-color);
+  padding: 15px 20px;
+  border-radius: 10px 10px;
+  /* border: 3px solid var(--secondary-color); */
+  -webkit-box-shadow: -5px 5px 10px 0.5px rgba(0, 0, 0, 0.27);
+  -moz-box-shadow: -5px 5px 10px 0.5px rgba(0, 0, 0, 0.27);
+  box-shadow: -5px 5px 10px 0.5px rgba(0, 0, 0, 0.27);
+}
+.azarContent .container .azkarFehres .askarMainUlForFehres li a.active {
+  color: var(--secondary-color);
+  background-color: var(--main-color);
+  padding: 10px 15px;
+  border-radius: 10px 10px;
+  -webkit-box-shadow: -5px 5px 10px 0.5px rgba(0, 0, 0, 0.27);
+  -moz-box-shadow: -5px 5px 10px 0.5px rgba(0, 0, 0, 0.27);
+  box-shadow: -5px 5px 10px 0.5px rgba(0, 0, 0, 0.27);
+}
+a.active {
+  color: var(--secondary-color);
+  background-color: var(--main-color);
+  padding: 10px 15px;
+  border-radius: 10px 10px;
+  -webkit-box-shadow: -5px 5px 10px 0.5px rgba(0, 0, 0, 0.27);
+  -moz-box-shadow: -5px 5px 10px 0.5px rgba(0, 0, 0, 0.27);
+  box-shadow: -5px 5px 10px 0.5px rgba(0, 0, 0, 0.27);
+}
+.azarContent .container .azkarTextContent {
+  width: 50%;
+}
+.azarContent .container .azkarTextContent h2 {
+  display: inline-block;
+  color: var(--secondary-color);
+  background-color: var(--main-color);
+  padding: 10px 15px;
+  font-size: 22px;
+  text-align: center;
+  border-radius: 6px 6px;
+  -webkit-box-shadow: -5px 5px 10px 0.5px rgba(0, 0, 0, 0.27);
+  -moz-box-shadow: -5px 5px 10px 0.5px rgba(0, 0, 0, 0.27);
+  box-shadow: -5px 5px 10px 0.5px rgba(0, 0, 0, 0.27);
+}
+
+.azarContent .container .azkarTextContent .azkarText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  border: 3px solid var(--main-color);
+  padding: 10px 15px;
+  border-radius: 10px 10px;
+  position: relative;
+  -webkit-box-shadow: -5px 5px 10px 0.5px rgba(0, 0, 0, 0.27);
+  -moz-box-shadow: -5px 5px 10px 0.5px rgba(0, 0, 0, 0.27);
+  box-shadow: -5px 5px 10px 0.5px rgba(0, 0, 0, 0.27);
+}
+
+.azkarText .mainZikrTextBody {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  position: relative;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.azkarText .mainZikrTextBody .zekrTD {
+  color: var(--main-color);
+  width: 65%;
+  line-height: 3;
+}
+.azkarText .mainZikrTextBody .addElTekrar {
+  line-height: 3;
+  font-size: 14px;
+  min-width: 30%;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  color: var(--secondary-color);
+  background-color: var(--main-color);
+  font-weight: bold;
+  border-radius: 6px 6px;
+}

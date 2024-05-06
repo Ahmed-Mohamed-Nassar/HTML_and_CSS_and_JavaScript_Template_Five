@@ -1,0 +1,159 @@
+:root {
+  --main-color: #6b291d;
+  --secondary-color: #fef5f0;
+  /* --section-padding: 60px; */
+  --section-background: #fef5f0;
+  --main-duration: 0.5s;
+}
+/* End Variables */
+/* Start Global Rules */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Work Sans", sans-serif;
+  direction: rtl;
+  background-color: var(--section-background);
+}
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/* End Global Rules */
+/*  */
+/* .quranContent {
+} */
+.quranContent .container {
+  display: flex;
+  justify-content: space-between;
+}
+.quranContent .container .fehres {
+  width: 50%;
+}
+.quranContent .container .fehres h2 {
+  display: inline-block;
+  color: var(--secondary-color);
+  background-color: var(--main-color);
+  padding: 10px 15px;
+  border-radius: 6px 6px;
+  text-align: center;
+  font-size: 22px;
+  -webkit-box-shadow: -5px 5px 10px 0.5px rgba(0, 0, 0, 0.27);
+  -moz-box-shadow: -5px 5px 10px 0.5px rgba(0, 0, 0, 0.27);
+  box-shadow: -5px 5px 10px 0.5px rgba(0, 0, 0, 0.27);
+}
+
+.quranContent .container .fehres .mainUlForFehres {
+  display: flex;
+  flex-direction: column;
+}
+.quranContent .container .fehres .mainUlForFehres li {
+  margin-bottom: 20px;
+  list-style-type: none;
+  color: var(--main-color);
+}
+.quranContent .container .fehres .mainUlForFehres li a {
+  text-decoration: none;
+  color: var(--main-color);
+  transition: var(--main-duration);
+  letter-spacing: 1px;
+}
+.quranContent .container .fehres .mainUlForFehres li a:hover {
+  color: var(--secondary-color);
+  background-color: var(--main-color);
+  padding: 15px 20px;
+  border-radius: 10px 10px;
+  /* border: 3px solid var(--secondary-color); */
+  -webkit-box-shadow: -5px 5px 10px 0.5px rgba(0, 0, 0, 0.27);
+  -moz-box-shadow: -5px 5px 10px 0.5px rgba(0, 0, 0, 0.27);
+  box-shadow: -5px 5px 10px 0.5px rgba(0, 0, 0, 0.27);
+}
+.quranContent .container .fehres .mainUlForFehres li a.active {
+  color: var(--secondary-color);
+  background-color: var(--main-color);
+  padding: 10px 15px;
+  border-radius: 10px 10px;
+  -webkit-box-shadow: -5px 5px 10px 0.5px rgba(0, 0, 0, 0.27);
+  -moz-box-shadow: -5px 5px 10px 0.5px rgba(0, 0, 0, 0.27);
+  box-shadow: -5px 5px 10px 0.5px rgba(0, 0, 0, 0.27);
+}
+a.active {
+  color: var(--secondary-color);
+  background-color: var(--main-color);
+  padding: 10px 15px;
+  border-radius: 10px 10px;
+  -webkit-box-shadow: -5px 5px 10px 0.5px rgba(0, 0, 0, 0.27);
+  -moz-box-shadow: -5px 5px 10px 0.5px rgba(0, 0, 0, 0.27);
+  box-shadow: -5px 5px 10px 0.5px rgba(0, 0, 0, 0.27);
+}
+.quranContent .container .ayatTextContent {
+  width: 50%;
+}
+.quranContent .container .ayatTextContent h2 {
+  display: inline-block;
+  color: var(--secondary-color);
+  background-color: var(--main-color);
+  padding: 10px 15px;
+  font-size: 22px;
+  text-align: center;
+  border-radius: 6px 6px;
+  -webkit-box-shadow: -5px 5px 10px 0.5px rgba(0, 0, 0, 0.27);
+  -moz-box-shadow: -5px 5px 10px 0.5px rgba(0, 0, 0, 0.27);
+  box-shadow: -5px 5px 10px 0.5px rgba(0, 0, 0, 0.27);
+}
+
+.quranContent .container .ayatTextContent .ayatText {
+  border: 3px solid var(--main-color);
+  padding: 10px 15px;
+  border-radius: 10px 10px;
+  position: relative;
+  -webkit-box-shadow: -5px 5px 10px 0.5px rgba(0, 0, 0, 0.27);
+  -moz-box-shadow: -5px 5px 10px 0.5px rgba(0, 0, 0, 0.27);
+  box-shadow: -5px 5px 10px 0.5px rgba(0, 0, 0, 0.27);
+}
+.quranContent .container .ayatTextContent .ayatText::before {
+  content: "";
+  width: 185px;
+  height: 3px;
+  background-color: var(--main-color);
+  position: absolute;
+  right: 0;
+  top: 55px;
+}
+.quranContent .container .ayatTextContent .ayatText span {
+  color: var(--main-color);
+  line-height: 3;
+  letter-spacing: 1px;
+}
+.quranContent .container .ayatTextContent .ayatText span span {
+  border: 2px var(--main-color) solid;
+  padding: 2px 5px;
+  border-radius: 0px 10px;
+  color: var(--secondary-color);
+  background-color: var(--main-color);
+}

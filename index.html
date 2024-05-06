@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/mster.css" />
+    <script src="node_modules/axios/dist/axios.min.js"></script>
+    <title>مواقيت الصلاة</title>
+  </head>
+  <body>
+    <!-- Start Header  -->
+    <div class="header">
+      <div class="container">
+        <div class="headerContent">
+          <div class="mainheader">
+            <h1 class="headerTitle">مواقيت الصلاة</h1>
+          </div>
+          <div class="mainUl">
+            <ul>
+              <li class="mawaketElsala">
+                <a href="index.html" class="active">مواقيت الصلاة</a>
+              </li>
+              <li class="koranKarem">
+                <a href="./html/inde2.html">القرآن الكريم</a>
+              </li>
+              <li class="azkar"><a href="./html/index3.htm">الأذكار</a></li>
+              <li class="etaslBna">
+                <a href="./html/index4.html">اتصل بنا</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Header  -->
+    <!-- Start MawaketContent  -->
+    <div class="mawaketContent">
+      <div class="container">
+        <div class="mawaketContentContent">
+          <div class="cityAData">
+            <div class="tare5">
+              <p class="date">
+                اليوم : <span class="dayName"></span>
+                <span class="dayNum"></span> <span class="month"></span>
+                <span class="year"></span><br />
+                <span class="coolText"
+                  >مواقيت الصلاة في محافظة <span class="elmohafza"></span> في
+                  دولة <span class="dawla"></span> هي :-</span
+                >
+              </p>
+            </div>
+            <div class="setCityACounty">
+              <div class="country">
+                <label for>
+                  <span class="countrySpan">اختر الدولة :</span>
+                  <select class="countryForm" name id></select>
+                </label>
+              </div>
+              <div class="city">
+                <label for>
+                  <span class="citySpan">اختر المحافظة :</span>
+                  <select class="cityForm" name id></select>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="elmawaket">
+            <div class="card">
+              <div class="prayName">الفجر</div>
+              <div class="prayTime">
+                الساعة : <span class="prayTimeText fajr"> 00:00 </span>
+                <hr />
+                صباحا
+              </div>
+            </div>
+            <div class="card">
+              <div class="prayName">الشروق</div>
+              <div class="prayTime">
+                الساعة : <span class="prayTimeText sunrise"> 00:00 </span>
+                <hr />
+                صباحا
+              </div>
+            </div>
+            <div class="card">
+              <div class="prayName">الظهر</div>
+              <div class="prayTime">
+                الساعة : <span class="prayTimeText zohr"> 00:00 </span>
+                <hr />
+                صباحا
+              </div>
+            </div>
+            <div class="card">
+              <div class="prayName">العصر</div>
+              <div class="prayTime">
+                الساعة : <span class="prayTimeText asr"> 00:00 </span>
+                <hr />
+                صباحا
+              </div>
+            </div>
+            <div class="card">
+              <div class="prayName">المغرب</div>
+              <div class="prayTime">
+                الساعة : <span class="prayTimeText sunset">00:00 </span>
+                <hr />
+                صباحا
+              </div>
+            </div>
+            <div class="card">
+              <div class="prayName">العشاء</div>
+              <div class="prayTime">
+                الساعة : <span class="prayTimeText ishaa">00:00 </span>
+                <hr />
+                صباحا
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End MawaketContent  -->
+    <script src="./js/main.js"></script>
+  </body>
+</html>
