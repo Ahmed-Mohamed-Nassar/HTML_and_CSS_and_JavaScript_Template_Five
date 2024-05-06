@@ -1,4 +1,4 @@
-fetch(`http://api.alquran.cloud/v1/quran/quran-uthmani`)
+fetch(`https://api.alquran.cloud/v1/quran/quran-uthmani`)
   .then(function (response) {
     return response.json();
   })
